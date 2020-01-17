@@ -53,5 +53,11 @@ Route::get('/contact', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    # $articles = App\Article::latest()->take(2)->get();
+    $articles = App\Article::take(2)->latest()->get();
+    # or
+    #$article = App\Article::paginate(2);
+    return view('about', [
+        'articles' => $articles
+    ]);
 });
