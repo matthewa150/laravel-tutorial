@@ -64,3 +64,19 @@ Route::get('/about', function () {
 
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/articles/{article}', 'ArticlesController@show');
+
+// RESTful API
+
+// GET /articles
+// GET /articles/:id
+// POST /articles
+// PUT /articles/:id
+// DELETE /articles/:id
+
+// GET /videos
+// GET /videos/create
+// POST /videos
+// GET /videos/2
+// GET /videos/2/edit
+// PUT /videos/2
+// DELETE /videos/2
