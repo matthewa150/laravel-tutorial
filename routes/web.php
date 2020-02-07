@@ -61,3 +61,5 @@ Route::get('/about', function () {
         'articles' => $articles
     ]);
 });
+
+Route::get('/articles/{article}', 'ArticlesController@show');
