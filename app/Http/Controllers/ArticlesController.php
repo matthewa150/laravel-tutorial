@@ -36,7 +36,7 @@ class ArticlesController extends Controller
 
         Article::create($this->simpleValidate);
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     public function edit(Article $article)
@@ -52,7 +52,7 @@ class ArticlesController extends Controller
 
         $article->update($this->simpleValidate());
 
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
     public function destroy()
