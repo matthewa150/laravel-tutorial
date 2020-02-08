@@ -39,6 +39,12 @@ class ArticlesController extends Controller
 
         // FIXME: We need validation!
 
+        request()->validate([
+            'title'=> ['required'],
+            'excerpt' => ['required'],
+            'body' => ['required']
+        ]);
+
         // FIXME: We can make this more succinct!
 
         $article = new Article();
@@ -63,6 +69,12 @@ class ArticlesController extends Controller
     public function update($id)
     {
         // Persist the edited resource.
+
+        request()->validate([
+            'title'=> ['required'],
+            'excerpt' => ['required'],
+            'body' => ['required']
+        ]);
 
         $article = Article::find($id);
         $article->title = request('title');
