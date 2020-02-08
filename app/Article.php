@@ -13,4 +13,15 @@ class Article extends Model
         return 'slug'; // Article::where('slug', $article)->first();
     }
     */
+
+    // Excplicitly allow MassAssignment
+    protected $fillable = ['title', 'excerpt', 'body'];
+
+    /*
+        User::create(request()->all()) // Can be super dangerous!
+
+        If you are being safe, you can disable this protection:
+
+        protected $guarded = [];
+    */
 }
